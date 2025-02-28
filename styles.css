@@ -1,11 +1,12 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     min-height: 100vh;
-    background: linear-gradient(135deg, #1e90ff, #ff69b4);
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #333;
 }
 
 .container {
@@ -15,38 +16,56 @@ body {
 }
 
 .landing-page {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.8);
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.landing-page:hover {
+    transform: translateY(-5px);
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 2rem;
+    color: #444;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
 
 .category-btn {
-    background: #4CAF50;
+    background: linear-gradient(135deg, #ff7eb3, #ff758c);
     color: white;
     border: none;
     padding: 1rem 2rem;
     margin: 0.5rem;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .category-btn:hover {
-    background: #45a049;
+    background: linear-gradient(135deg, #ff527b, #e94560);
+    transform: scale(1.05);
 }
 
 .game-container {
     display: none;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.85);
     padding: 2rem;
-    border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.game-container.show {
+    display: block;
 }
 
 .game-info {
@@ -54,28 +73,43 @@ h1 {
     justify-content: space-between;
     margin-bottom: 1rem;
     font-size: 1.2rem;
+    font-weight: 500;
+    color: #555;
 }
 
 #cardGrid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 1rem;
+    gap: 15px;
+    margin-top: 1.5rem;
 }
 
 .card {
-    background: #fff;
-    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
     cursor: pointer;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 600px) {
     #cardGrid {
         grid-template-columns: repeat(3, 1fr);
     }
+    
     .category-btn {
         width: 100%;
         margin: 0.5rem 0;
     }
+
+    .game-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
 }
